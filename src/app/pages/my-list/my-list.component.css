@@ -1,0 +1,47 @@
+.background-container {
+  position: relative;
+  background-image: url(../../../assets/FondoInvitados.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  transition: background-color 0.3s ease; /* Suaviza el cambio de color de fondo */
+}
+
+/* Usar un color de fondo para el placeholder */
+.background-container {
+  background-color: #0c0033; /* Color similar a la imagen para evitar vacío */
+}
+
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 0, 8, 0.568); /* Capa oscura con opacidad 50% */
+  z-index: 1; /* Coloca la capa oscura detrás del contenido */
+  pointer-events: none; /* Permite la interacción con el contenido debajo del overlay */
+}
+
+/* Asegura que el contenido esté por encima del overlay */
+.background-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+.font-title{
+  font-size: 24px;  /* Cambia el tamaño del texto */
+    font-weight: bold; /* Aplica negrita */
+  color: #0c0033;
+line-height: 1.2;
+}
+
+.font-p{
+  font-size: 18px;  /* Cambia el tamaño del texto */
+  text-justify: justify;
+}
+.padding{
+  padding-top: 20px;
+}

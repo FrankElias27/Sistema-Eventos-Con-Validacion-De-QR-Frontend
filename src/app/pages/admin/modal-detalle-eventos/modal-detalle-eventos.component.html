@@ -1,0 +1,87 @@
+<mat-card>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <mat-card-subtitle style="text-align: center;">Configuraciones  del Evento</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form (ngSubmit)="actualizarDatos()">
+
+        <div class="datetime-container flex flex-col md:flex-row gap-4 ">
+          <mat-form-field appearance="outline" class="date-field flex-1 full-width">
+            <mat-label>Fecha Inicio del Evento</mat-label>
+            <input  matInput [matDatepicker]="pickerStart" [(ngModel)]="evento.fechaInicio" name="fechaInicio" placeholder="Seleccione la fecha">
+            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+          </mat-form-field>
+          <input name="horaInicio" matInput type="time" [(ngModel)]="evento.horaInicio" placeholder="Seleccione la hora" class="cursor-pointer flex-1 w-full max-w-full">
+        </div>
+
+        <!-- Fecha y Hora de Fin -->
+        <div class="datetime-container flex flex-col md:flex-row gap-4  ">
+          <mat-form-field appearance="outline" class="date-field flex-1 full-width ">
+            <mat-label>Fecha Fin del Evento</mat-label>
+            <input  matInput [matDatepicker]="pickerEnd" [(ngModel)]="evento.fechaFin" name="fechaFin" placeholder="Seleccione la fecha">
+            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #pickerEnd></mat-datepicker>
+          </mat-form-field>
+          <input matInput type="time" [(ngModel)]="evento.horaFin" name="horaFin" placeholder="Seleccione la hora" class="flex-1 cursor-pointer w-full max-w-full">
+        </div>
+
+        <mat-form-field class="w100" appearance="outline">
+          <mat-label>Cantidad de códigos QR</mat-label>
+          <input
+          [(ngModel)]="evento.cantidadQR"
+          name="cantidadQR"
+          placeholder="Digite la cantidad de códigos QR"
+          required
+          matInput>
+        </mat-form-field>
+
+        <mat-form-field class="w100" appearance="outline">
+          <mat-label>Identificador del Evento</mat-label>
+          <input
+          [(ngModel)]="evento.codeIdentify"
+          name="codeIdentify"
+          placeholder="Digite el identificador del Evento"
+          required
+          matInput>
+        </mat-form-field>
+
+        <div class="radio-button">
+          <mat-label>Visibilidad</mat-label>
+          <mat-radio-group [(ngModel)]="evento.visibilidad" name="visibilidad">
+            <mat-radio-button class="example-radio-button" value="PROXIMAMENTE">Proximamente</mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="NORMAL">Normal</mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="SOLDOUT">Sold-Out</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- Slide Toggle para Activar/Desactivar el Evento -->
+        <div class="container text-center">
+          <mat-slide-toggle
+            color="primary"
+            [(ngModel)]="isActive"
+            name="isActive"
+            (change)="toggleEventStatus($event)">
+            {{ isActive ? 'Evento Activo' : 'Evento Inactivo' }}
+          </mat-slide-toggle>
+        </div>
+
+        <br>
+        <mat-divider></mat-divider>
+
+        <div class="container text-center">
+          <br>
+          <button class="btn" mat-raised-button color="primary" type="submit">Registrar Configuración</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</mat-card>

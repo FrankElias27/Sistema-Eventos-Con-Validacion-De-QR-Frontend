@@ -1,0 +1,22 @@
+
+.search-input {
+  flex: 1; /* El input ocupa todo el espacio disponible */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1976d2; /* Color del borde al hacer foco */
+}
+
+.imagen-circular {
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: 40px; /* Ajusta el tamaño según tus necesidades */
+  border-radius: 50%; /* Esto hace que la imagen sea circular */
+  object-fit: cover; /* Asegura que la imagen mantenga su aspecto sin distorsionarse */
+}
+

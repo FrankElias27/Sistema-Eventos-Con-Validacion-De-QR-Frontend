@@ -1,0 +1,40 @@
+<mat-card>
+  <div class="container text-center flex justify-center items-center ">
+    <img src="../../../../assets/banned.png" width = "120" height = "120">
+  </div>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <mat-card-subtitle style="text-align: center;">Configuración del Usuario</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form (ngSubmit)="actualizarDatos()">
+
+        <!-- Slide Toggle para Activar/Desactivar el Evento -->
+        <div class="container text-center">
+          <mat-slide-toggle
+            color="primary"
+            [(ngModel)]="isActive"
+            name="isActive"
+            (change)="toggleEventStatus($event)">
+            {{ isActive ? 'Usuario Activo' : 'Usuario Inactivo' }}
+          </mat-slide-toggle>
+        </div>
+
+        <br>
+        <mat-divider></mat-divider>
+
+        <div class="container text-center">
+          <br>
+          <button class="btn" mat-raised-button color="primary" type="submit">Registrar Configuración</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</mat-card>

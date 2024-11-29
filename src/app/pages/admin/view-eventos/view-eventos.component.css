@@ -1,0 +1,99 @@
+
+.w100{
+  width: 100%;
+}
+
+.verde {
+  background-color: #4CAF50; /* Verde */
+  color: white; /* Color de texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 1px 1px; /* Padding para el contenido dentro del botón */
+  display: inline-flex; /* Permite que los elementos dentro del botón se alineen horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  justify-content: center;
+}
+
+.verde mat-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono si es necesario */
+  margin-right: 0; /* Elimina el margen derecho para evitar espacio extra */
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+.search-input {
+  flex:auto; /* El input ocupa todo el espacio disponible */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1976d2; /* Color del borde al hacer foco */
+}
+
+.custom-button {
+  height: 40px; /* Altura del botón */
+  padding: 0 20px; /* Espaciado interno horizontal */
+  font-size: 16px; /* Tamaño de la fuente */
+  color: white; /* Color del texto */
+  background-color: #3f51b5; /* Color de fondo del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  display: inline-flex; /* Utiliza flexbox para centrar */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+
+  /* Espaciado entre elementos adyacentes */
+  margin-left: 10px; /* Margen izquierdo */
+}
+
+
+.no-activo {
+  color: red;
+  font-weight: bold;
+}
+
+.activo {
+  color: green;
+  font-weight: bold;
+}
+
+.imagen-circular {
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: 40px; /* Ajusta el tamaño según tus necesidades */
+  border-radius: 50%; /* Esto hace que la imagen sea circular */
+  object-fit: cover; /* Asegura que la imagen mantenga su aspecto sin distorsionarse */
+}
+
+.small-button {
+  padding: 2px 2px;
+  width: 5px;
+}
+
+.button-separation {
+  margin-right: 8px; /* Ajusta la separación entre los botones */
+}
+
+
+.small-button .mat-icon {
+  font-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+.button-divider{
+ margin-left: 10px;
+}
+
+.arrow{
+  font-size: 20px;
+}
+
+

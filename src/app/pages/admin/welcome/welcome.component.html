@@ -1,0 +1,30 @@
+
+  <section class="bg-gray-50 dark:bg-gray-900 h-full ">
+    <div class=" w-full flex flex-col items-center justify-center px-6 py-8 sm:pl-[80px] mx-auto md:h-screen lg:py-0 ">
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 max-w-screen-lg xl:p-0 dark:bg-gray-800 dark:border-gray-700 div-margin">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <div class=" grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[40px] lg:grid-cols-12">
+                <div class="mr-auto place-self-center lg:col-span-7">
+                    <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Bienvenido {{ user?.nombre | capitalize }} {{ user?.apellidoPaterno | capitalize }} {{ user?.apellidoMaterno | capitalize }} al Panel Administrativo.</h1>
+                    <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 text-justify ">Agrega, edita o elimina usuarios, organiza eventos, gestiona accesos y genera reportes en tiempo real. ¡Todo lo que necesitas para mantener Evaclub en perfecto orden está a solo un clic de distancia!</p>
+                    <a routerLink="/admin/eventos" class="mb-2 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-[#3f51b5] hover:bg-[#3f51b5] focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        Ver Eventos
+
+                        <svg class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                        </svg>
+
+                      </a>
+                    <a routerLink="/admin/view-usuarios" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        Ver usuarios
+                    </a>
+                </div>
+                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                    <img src="../../../../assets/bienvenida.webp" alt="mockup">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+  </section>
+

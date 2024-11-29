@@ -1,0 +1,66 @@
+
+<mat-card>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <mat-card-subtitle style="text-align: center;">Actualizar el Evento</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form *ngIf = "evento" (ngSubmit)="submitForm()">
+        <!-- Nombre del Evento -->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Nombre del Evento</mat-label>
+          <input [(ngModel)] = "evento.nombre" name="nombreEvento" matInput placeholder="Digite el nombre del Evento" />
+
+        </mat-form-field>
+
+        <!-- Fecha del Evento -->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Fecha del Evento</mat-label>
+          <input [(ngModel)] = "evento.fechaEvento" name="fechaEvento"  matInput [matDatepicker]="picker" placeholder="Seleccione la fecha del Evento" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+
+        </mat-form-field>
+
+
+        <!-- Selección de Archivo -->
+        <mat-label>
+          <div class="flex items-center space-x-2">
+              <!-- Texto -->
+              Escoja la imagen del Evento (Peso Max. 80kb):
+
+              <!-- Imagen -->
+              <a href="https://squoosh.app/" target="_blank">
+                <img src="../../../../assets/squoosh.webp" class="h-7 w-10 sm:h-10 sm:w-10" alt="">
+              </a>
+          </div>
+      </mat-label>
+        <div class="file-input-wrapper">
+          <input  name="imagenEvento" type="file" id="file-input" (change)="onFileChange($event)" accept="image/*" />
+          <label for="file-input" class="file-input-button">
+            <mat-icon class="file-icon">attach_file</mat-icon>
+            <span>Seleccionar archivo</span>
+          </label>
+        </div>
+        <div *ngIf="selectedFileName" class="file-name">
+          Archivo seleccionado: {{ selectedFileName }}
+        </div>
+
+        <br>
+        <mat-divider></mat-divider>
+        <div class="container text-center">
+          <br>
+          <button class="btn" mat-raised-button color="primary" type="submit">Actualizar Evento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</mat-card>
+

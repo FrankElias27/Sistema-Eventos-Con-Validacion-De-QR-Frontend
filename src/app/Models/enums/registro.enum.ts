@@ -1,0 +1,4 @@
+export enum Registro {
+  CONFIRMADO = "CONFIRMADO",
+  NOCONFIRMADO = "NOCONFIRMADO",
+}

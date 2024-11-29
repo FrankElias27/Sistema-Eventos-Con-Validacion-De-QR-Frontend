@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Editar Invitado</h2>
+<mat-dialog-content>
+  <form [formGroup]="inviteForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+      <mat-error *ngIf="inviteForm.get('nombre')?.hasError('required')">
+        El nombre es requerido.
+      </mat-error>
+      <mat-error *ngIf="inviteForm.get('nombre')?.hasError('pattern')">
+        El nombre solo puede contener letras y espacios.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>DNI</mat-label>
+      <input matInput formControlName="dni">
+      <mat-error *ngIf="inviteForm.get('dni')?.hasError('required')">
+        El DNI es requerido.
+      </mat-error>
+      <mat-error *ngIf="inviteForm.get('dni')?.hasError('pattern')">
+        El DNI debe contener exactamente 8 dígitos numéricos.
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [disabled]="inviteForm.invalid" (click)="onSave()">Guardar</button>
+</mat-dialog-actions>

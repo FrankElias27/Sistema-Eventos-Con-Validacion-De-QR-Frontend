@@ -1,0 +1,55 @@
+<section class="bg-gray-50 dark:bg-gray-900 h-full">
+  <div class="lg:pt-[20px] w-full flex flex-col items-center justify-center px-6 py-8 sm:pl-[60px] mx-auto md:h-screen lg:py-0 bg-opacity-0">
+    <div class="w-full bg-white rounded-lg  dark:border md:mt-0 max-w-screen-xl xl:p-4 dark:bg-gray-800 dark:border-gray-700 bg-opacity-0">
+
+
+          <div class="grid gap-6 px-4 py-4 mx-auto max-w-screen-md grid-cols-1 sm:grid-cols-2  lg:grid-cols-2">
+          <div class="flex flex-col">
+            <mat-card class="example-card max-w-full">
+              <div class="flex items-center justify-center">
+                <img mat-card-image src="../../../../assets/clientes.png" alt="Image" class="w-auto h-auto max-w-full">
+              </div>
+              <mat-card-title class="text-center">Reporte de Clientes Registrados</mat-card-title>
+              <mat-card-content>
+                <p class="centrar hidden md:hidden xl:block">
+                  El "Reporte de Clientes Registrados" Proporciona una visión detallada de los clientes registrados en la aplicación Web.
+                </p>
+              </mat-card-content>
+              <div class="flex justify-center space-x-4 mt-4">
+                <button
+                  class="bg-red-500 text-white font-medium py-2 px-4 rounded hover:bg-red-600 transition duration-200"
+                  (click)="descargarClientesPDF()">
+                  PDF
+                </button>
+                <button
+                  class="bg-green-500 text-white font-medium py-2 px-4 rounded hover:bg-green-600 transition duration-200"
+                  (click)="descargarClientesEXCEL()">
+                  EXCEL
+                </button>
+              </div>
+            </mat-card>
+          </div>
+
+          <div class="flex flex-col">
+            <mat-card class="example-card max-w-full">
+              <div class="flex items-center justify-center">
+                <img mat-card-image src="../../../../assets/asistencia.png" alt="Image" class="w-auto h-auto max-w-full">
+              </div>
+              <mat-card-title class="text-center">Reporte de Asistencia de Evento</mat-card-title>
+              <mat-card-content>
+                <p class="centrar hidden md:hidden xl:block">
+                  El "Reporte de Asistencia de Evento" ofrece una vista detallada de los clientes que asistieron a un evento determinado.
+                </p>
+              </mat-card-content>
+              <div class="flex justify-center space-x-4 mt-4">
+                <button class="bg-green-500 text-white font-medium py-2 px-4 rounded hover:bg-green-600 transition duration-200" (click)="abrirModalAsistencia()">Generar Reporte</button>
+              </div>
+            </mat-card>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+</section>

@@ -1,0 +1,49 @@
+<section class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+  <div class="padding flex flex-col items-center justify-center px-6 py-8 mx-auto w-full h-screen md:h-screen lg:py-0 background-container">
+    <div class="w-full rounded-[20px] shadow dark:border md:mt-0 sm:max-w-xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 background-container2">
+      <div class="p-6 bg-white rounded-[20px] space-y-4 md:space-y-6 sm:p-8 mt-10">
+
+        <h2 *ngIf="!isLoggedIn" class="mb-4 text-4xl tracking-tight font-extrabold font-title text-center text-gray-900 dark:text-white">Mi Lista de Invitados</h2>
+        <h2 *ngIf="isLoggedIn" class="mb-4 text-4xl tracking-tight font-extrabold font-title text-center text-gray-900 dark:text-white">Lista de {{ user?.nombre | capitalize }} {{ user?.apellidoPaterno | capitalize }} {{ user?.apellidoMaterno | capitalize }}</h2>
+
+        <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-300 sm:text-xl hidden sm:block font-p">¡Esta es la lista de invitados que tomaremos en cuenta para ti!  <br> Si necesitas hacer cambios, no dudes en enviar un mensaje o llamar al +51 970 932 182.</p>
+
+        <div class="relative mb-4">
+          <label class="block mb-2 text-sm font-medium text-gray-400 dark:text-gray-400">Mi lista de invitados:</label>
+
+          <div class="overflow-x-auto h-[348px]">
+            <table class="min-w-full text-left text-sm font-light" style="height: 100%;">
+              <thead class="border-b font-medium dark:border-neutral-500">
+                <tr>
+                  <th class="px-6 py-4">#</th>
+                  <th class="px-6 py-4">Nombre</th>
+                  <th class="px-6 py-4">DNI</th>
+                  <th class="px-6 py-4">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="invitados.length === 0 && isLoggedIn">
+                  <td colspan="4" class="text-center text-gray-500">No hay invitados añadidos</td>
+                </tr>
+                <tr *ngIf="invitados.length === 0 && !isLoggedIn">
+                  <td colspan="4" class="text-center text-gray-500">Por favor, inicia sesión para ver tu lista de invitados</td>
+                </tr>
+                <tr *ngFor="let invite of invitados; let i = index" class="border-b dark:border-neutral-500">
+                  <td class="whitespace-nowrap px-6 py-4">{{ i + 1 }}</td>
+                  <td class="whitespace-nowrap px-6 py-4 font-medium dark:text-white">{{ invite.nombre }}</td>
+                  <td class="whitespace-nowrap px-6 py-4">{{ invite.dni }}</td>
+                  <td class="whitespace-nowrap px-6 py-4">
+                    <button class="text-blue-500 hover:text-blue-700">
+                      <mat-icon>check_circle</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

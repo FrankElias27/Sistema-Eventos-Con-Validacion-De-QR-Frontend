@@ -1,0 +1,96 @@
+.w100{
+  width: 100%;
+}
+.w70{
+  width: 70%;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.btn {
+  background-color: #ffab00; /* Color de fondo azul para el botón */
+  color: #ffffff; /* Color del texto blanco */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Efecto de transición en el color de fondo */
+}
+
+.btn:hover {
+  background-color: #c11771; /* Color azul más oscuro en hover */
+}
+
+.btn:focus {
+  outline: none; /* Elimina el borde en el enfoque */
+}
+
+.textarea {
+  padding: 0; /* Ajusta el padding interno si es necesario */
+}
+
+/* Contenedor para alinear los campos en una fila */
+.datetime-container {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  gap: 8px; /* Espacio entre los campos, ajusta según sea necesario */
+}
+
+/* Ajusta el tamaño y margen de los campos según sea necesario */
+.mat-form-field {
+  flex: 1; /* Permite que el campo de fecha ocupe el espacio disponible */
+  margin-right: 8px; /* Espacio entre el campo de fecha y el campo de hora */
+}
+
+/* Estilo para asegurar la consistencia del input de tipo time */
+input[type="time"] {
+  height: 32px; /* Ajusta la altura para que coincida con el tamaño de Angular Material */
+  padding: 8px 12px; /* Asegura que el padding sea consistente */
+  border-radius: 4px; /* Esquinas redondeadas como el estilo de Angular Material */
+  border: 1px solid rgba(0, 0, 0, 0.23); /* Borde similar al de Angular Material */
+  box-shadow: none; /* Elimina la sombra por defecto */
+  position: relative;
+  top: -8px; /* Ajusta este valor para mover el input hacia arriba */
+  width: auto;
+}
+
+/* Ajuste para el placeholder */
+input[type="time"]::placeholder {
+  color: rgba(0, 0, 0, 0.54); /* Color del placeholder similar al de Angular Material */
+  opacity: 1; /* Asegúrate de que el placeholder sea visible */
+}
+
+/* Opcional: Ajusta el ancho máximo de los campos */
+.date-field {
+  max-width: 300px; /* Ajusta según tus necesidades */
+}
+
+.time-field {
+  max-width: 120px; /* Ajusta según tus necesidades */
+}
+
+/* Estilo para el contenedor del grupo de radio */
+mat-radio-group {
+  display: flex;              /* Utiliza flexbox para alinear los elementos */
+  flex-direction: column;     /* Alinea los botones de radio verticalmente */
+  gap: 8px;                   /* Espacio entre los botones de radio */
+  margin-top: 8px;            /* Espacio arriba del grupo de radio */
+}
+
+/* Estilo para cada botón de radio */
+mat-radio-button {
+  margin: 0;                  /* Elimina márgenes adicionales si es necesario */
+  padding: 4px 8px;           /* Padding para mejorar el área clickeable */
+  font-size: 14px;            /* Tamaño de fuente para el texto */
+  color: rgba(0, 0, 0, 0.87); /* Color del texto */
+}
+
+.radio-button{
+  margin-left: 10px;
+}
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background-color: #757575; /* Color de fondo del ícono */
+  border-radius: 4px; /* Esquinas redondeadas */
+}

@@ -1,0 +1,8 @@
+.search-input {
+  flex: 1; /* El input ocupa todo el espacio disponible */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}

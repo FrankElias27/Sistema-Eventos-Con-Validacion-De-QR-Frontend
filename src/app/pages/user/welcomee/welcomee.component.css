@@ -1,0 +1,137 @@
+/* Estilo para el título de bienvenida */
+.welcome-title {
+  font-size: 24px; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo para el título de la sección */
+.section-title {
+  font-size: 20px; /* Tamaño de fuente del título de la sección */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 10px; /* Espacio debajo del título de la sección */
+  text-align: center; /* Centra el texto */
+}
+
+.example-card {
+  width: 100%; /* Ancho completo del contenedor */
+  max-width: 308px; /* Ancho máximo de la tarjeta */
+  height: 558px; /* Altura fija para la tarjeta */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Efecto de transición */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido verticalmente */
+}
+
+.example-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.mat-card-image-wrapper {
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  height: 220px; /* Altura fija para el contenedor de la imagen */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el contenedor */
+}
+
+.mat-card-image {
+  max-width: 100%; /* Limita el ancho de la imagen al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
+}
+
+.mat-card-title {
+  font-size: 16px; /* Tamaño de fuente del título */
+  font-weight: bold; /* Negrita */
+  padding: 12px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+}
+
+.mat-card-content {
+  padding: 12px; /* Espaciado interno */
+  flex: 1; /* Permite que este contenedor se expanda para llenar el espacio disponible */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido verticalmente */
+  justify-content: space-between; /* Distribuye el contenido verticalmente */
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center; /* Botones centrados */
+  padding: 12px; /* Espaciado interno */
+}
+
+.card-subtitle {
+
+  color: #666; /* Color gris oscuro */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 10px; /* Espacio debajo del subtítulo */
+}
+.centrar {
+  text-align: center; /* Centra el texto dentro del contenedor */
+  word-wrap: break-word; /* Rompe palabras largas para evitar desbordamiento */
+  overflow-wrap: break-word; /* Rompe palabras largas en navegadores modernos */
+  hyphens: auto; /* Añade guiones automáticamente si el texto se corta */
+  white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+  margin: 0; /* Elimina el margen si no es necesario */
+  padding: 0; /* Elimina el padding si no es necesario */
+  max-width: 100%; /* Asegura que el párrafo no se expanda más allá del contenedor */
+  box-sizing: border-box; /* Incluye el padding y borde en el ancho total del elemento */
+}
+
+.margin{
+  margin-bottom: 20px;
+}
+
+.background-color{
+  background-color: #FFFF;
+
+}
+
+.padding-p{
+ padding-right: 8px;
+}
+
+
+
+
+
+
+.font-title{
+  font-size: 30px;  /* Cambia el tamaño del texto */
+    font-weight: bold; /* Aplica negrita */
+  color: #F4F4F4;
+line-height: 1.2;
+}
+
+
+#map { height: 480px; }
+
+.footer{
+  background-color: #cc2d78;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.highlight {
+  border: 2px solid #7145f9; /* Borde púrpura */
+  transition: border 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+
+.div-background {
+  background-color: #0e0038; /* Color para usuarios no logueados */
+}
+
+
+.naved {
+  background: linear-gradient(135deg, rgba(14, 0, 56, 0.8), rgba(255, 0, 128, 0.8));
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+}

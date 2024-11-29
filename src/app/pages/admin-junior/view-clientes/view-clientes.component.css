@@ -1,0 +1,49 @@
+
+.verde {
+  background-color: #4CAF50; /* Verde */
+  color: white; /* Color de texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 1px 1px; /* Padding para el contenido dentro del botón */
+  display: inline-flex; /* Permite que los elementos dentro del botón se alineen horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  justify-content: center;
+}
+
+.verde mat-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono si es necesario */
+  margin-right: 0; /* Elimina el margen derecho para evitar espacio extra */
+}
+
+
+
+.search-input {
+  flex: 1; /* El input ocupa todo el espacio disponible */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1976d2; /* Color del borde al hacer foco */
+}
+
+
+.button-separation {
+  margin-right: 8px; /* Ajusta la separación entre los botones */
+}
+
+
+
+
+.no-activo {
+  color: red;
+  font-weight: bold;
+}
+
+.activo {
+  color: green;
+  font-weight: bold;
+}

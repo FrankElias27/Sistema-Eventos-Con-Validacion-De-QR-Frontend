@@ -1,0 +1,61 @@
+<mat-card>
+  <div class="container text-center flex justify-center items-center">
+    <img src="../../../../assets/rangofechas.png" width="120" height="120">
+  </div>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <mat-card-subtitle style="text-align: center;">Seleccione el Rango de las Fechas</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form>
+        <div class="container mx-auto text-center p-4">
+          <div class="flex flex-col space-y-4 max-w-sm mx-auto">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Fecha de Inicio</mat-label>
+              <input matInput [matDatepicker]="pickerInicio" [(ngModel)]="fechaInicio" name="fechaInicio" placeholder="Selecciona la fecha de inicio" class="w-full">
+              <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+              <mat-datepicker #pickerInicio></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Fecha de Fin</mat-label>
+              <input matInput [matDatepicker]="pickerFin" [(ngModel)]="fechaFin" name="fechaFin" placeholder="Selecciona la fecha de fin" class="w-full">
+              <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+              <mat-datepicker #pickerFin></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <br>
+        <mat-divider></mat-divider>
+
+        <div class="flex justify-center space-x-4 mt-4">
+          <button
+            class="bg-red-500 text-white font-medium py-2 px-4 rounded hover:bg-red-600 transition duration-200"
+            color="primary"
+            type="button"
+            (click)="descargarReporteInvitadosPDF()"
+            [disabled]="!fechaInicio || !fechaFin"
+          >
+            PDF
+          </button>
+          <button
+            class="bg-green-500 text-white font-medium py-2 px-4 rounded hover:bg-green-600 transition duration-200"
+            color="primary"
+            type="button"
+            (click)="descargarReporteInvitadosEXCEL()"
+            [disabled]="!fechaInicio || !fechaFin"
+          >
+            EXCEL
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-card>

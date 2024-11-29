@@ -1,0 +1,64 @@
+<div class="ticket-container" id="ticket-to-download">
+  <!-- Contenedor de imagen principal -->
+  <div class="image-container flex justify-center items-center">
+    <img src="../../../../assets/Ticket.webp" alt="QR Code Validator" class="qr-image">
+  </div>
+
+  <!-- Título principal -->
+  <h1 class="title">Eva Club</h1>
+
+  <h1 class="nombre">{{ user.nombre }} {{ user.apellidoPaterno }} {{ user.apellidoMaterno }}</h1>
+
+  <!-- Separador -->
+  <div class="rosa"></div>
+
+  <!-- Contenido del diálogo -->
+  <div class="dialog-content">
+    <div class="qr-code-container flex justify-center items-center ">
+      <img *ngIf="qrCodeImage" [src]="'data:image/png;base64,' + qrCodeImage" alt="QR Code" class="qr-code-image" />
+      <p *ngIf="!qrCodeImage && !errorMessage" class="loading-message">Cargando código QR...</p>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </div>
+  </div>
+
+  <!-- Nota adicional -->
+  <div class="note-container ">
+    <mat-card-subtitle class="blanco" style="font-size: 13px;">
+      <p class="flex items-center justify-center text-justify hidden md:flex">
+        <mat-icon class="mr-4">info</mat-icon>
+        El código QR es único. No lo compartas hasta después de la verificación.
+    </p>
+    <p class="flex items-center justify-center text-justify md:hidden">
+
+      El código QR es único. ¡Manténlo privado!
+    </p>
+    </mat-card-subtitle>
+  </div>
+
+</div>
+
+  <!-- Botón de cierre -->
+  <div mat-dialog-actions class="dialog-actions space-x-3">
+    <button (click)="confirmAsistencia()" type="button" class="download-button  flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-[#0d0130] hover:bg-[#0d0130] focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+
+      <svg class="h-6 w-6 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z" clip-rule="evenodd"/>
+      </svg>
+
+      Obtener
+    </button>
+
+    <button  mat-dialog-close  type="button" class="close-button flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-[#0d0130] hover:bg-[#0d0130] focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+
+
+      <svg class="h-6 w-6 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z" clip-rule="evenodd"/>
+      </svg>
+
+
+      Cerrar
+    </button>
+  </div>
+
+
+

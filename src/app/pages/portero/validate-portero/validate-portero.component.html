@@ -1,0 +1,64 @@
+
+<section class="bg-gray-50 dark:bg-gray-900 h-full">
+  <div class="lg:pt-[50px] w-full flex flex-col items-center justify-center px-6 py-8 sm:pl-[80px] mx-auto md:h-screen lg:py-0">
+    <div class="w-full bg-white rounded-lg  dark:border md:mt-0 max-w-screen-lg xl:p-8 dark:bg-gray-800 dark:border-gray-700 bg-opacity-0">
+
+      <div class="card-container w-full">
+        <mat-card class="qr-card mt20">
+          <mat-card-header class="card-header">
+            <mat-card-title class="flex items-center text-[#0c0033] text-lg sm:text-xl md:text-2xl pb-4 ">
+              <!-- Botón para iniciar el escaneo -->
+
+            <button class="button" mat-button type="button" id="defaultModalButton" data-modal-target="defaultModal" data-modal-toggle="defaultModal"  color="primary" (click)="startScan()">Abrir la Cámara <mat-icon>photo_camera</mat-icon></button>
+
+            </mat-card-title>
+            <mat-card-subtitle class="card-subtitle">
+              Escanea el código QR para la validación.
+            </mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="image-container">
+              <img src="../../../../assets/escaneoqr.webp" alt="QR Code Validator" class="qr-image">
+            </div>
+
+            <form (ngSubmit)="validate()" #qrForm="ngForm">
+              <mat-form-field appearance="outline">
+                <mat-label>Código QR escaneado</mat-label>
+                <input matInput [(ngModel)]="qrCodeText" name="qrCode"  (keydown.enter)="onEnter($event)">
+              </mat-form-field>
+
+              <button class="button" mat-raised-button color="primary" type="submit" [disabled]="loading">
+                Validar Código QR
+                <mat-spinner *ngIf="loading" diameter="24"></mat-spinner>
+              </button>
+            </form>
+
+            <div *ngIf="validationMessage" class="validation-message">
+              <mat-icon>{{ validationIcon }}</mat-icon>
+              {{ validationMessage }}
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+
+
+          <!-- Contenedor del escáner QR -->
+           <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+           <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+
+            <button (click)="stopScan()" type="button" class=" text-gray-400 bg-white hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+              Cerrar la Cámara
+
+          </button>
+
+
+            <div id="reader" ></div>
+          </div>
+           </div>
+
+
+      </div>
+</div>
+</div>
+</section>

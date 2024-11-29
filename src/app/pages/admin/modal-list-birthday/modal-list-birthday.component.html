@@ -1,0 +1,77 @@
+<mat-card>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button py-8" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <br>
+  <mat-card-subtitle style="text-align: center;" >  Lista de Invitados de {{ usuario?.nombre | capitalize }} {{ usuario?.apellidoPaterno | capitalize }} {{ usuario?.apellidoMaterno | capitalize }} </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="no-padding flex flex-col md:flex-row justify-between items-center px-4 py-4 w-full max-w-screen-md mx-auto space-y-4 md:space-y-0 md:space-x-4">
+    <div class="flex flex-col md:flex-row w-full space-y-4 md:space-y-0 md:space-x-4 items-center">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Nombre y Apellidos</mat-label>
+        <input matInput [(ngModel)]="name" name="name" placeholder="Tyrion Lannister">
+      </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>DNI</mat-label>
+          <input matInput [(ngModel)]="dni" name="dni" placeholder="73268168">
+        </mat-form-field>
+      </div>
+
+      <div class="pb-4 w-full md:w-12">
+      <button mat-raised-button color="primary" class="pb-2 h-12 w-full md:w-12 flex items-center justify-center" (click)="addInvite()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="overflow-x-auto h-[348px]  justify-center">
+        <table class="min-w-full text-left text-sm font-light" style="height: 100%;">
+          <thead class="border-b font-medium dark:border-neutral-500">
+            <tr>
+              <th class="px-6 py-4">#</th>
+              <th class="px-6 py-4">Nombre</th>
+              <th class="px-6 py-4">DNI</th>
+              <th class="px-6 py-4">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="invitados.length === 0 ">
+              <td colspan="4" class="text-center text-gray-500">No hay invitados añadidos</td>
+            </tr>
+
+            <tr *ngFor="let invite of invitados; let i = index" class="border-b dark:border-neutral-500">
+              <td class="whitespace-nowrap px-6 py-4">{{ i + 1 }}</td>
+              <td class="whitespace-nowrap px-6 py-4 font-medium dark:text-white">{{ invite.nombre }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ invite.dni }}</td>
+              <td class="whitespace-nowrap px-6 py-4">
+                <button class="text-blue-500 hover:text-blue-700 mr-2" (click)="openEditModal(invite)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button class="text-red-500 hover:text-red-700" (click)="removeInvite(i)">
+                  <mat-icon>delete</mat-icon>
+              </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-4">
+    <button class="btn" mat-raised-button color="primary" (click)="actualizarLista()">Actualizar Lista</button>
+  </div>
+
+
+</mat-card>
+
+

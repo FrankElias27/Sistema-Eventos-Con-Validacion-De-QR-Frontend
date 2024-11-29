@@ -1,0 +1,38 @@
+mat-card {
+  width: 100%;
+  height: 100%;
+}
+
+.mat-expansion-panel-header {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.mat-expansion-panel-body {
+  padding: 0;
+}
+
+.mat-action-list {
+  padding: 0;
+}
+
+mat-icon {
+  margin-right: 8px;
+}
+.custom-expansion-panel {
+  box-shadow: none; /* Elimina la sombra del panel */
+  border: 1px solid white; /* Borde blanco */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.custom-expansion-panel .mat-expansion-panel-header {
+  background-color: transparent; /* Fondo transparente para el header */
+  color: inherit; /* Hereda el color del texto del contenedor padre */
+  border-bottom: 1px solid white; /* Borde blanco en la parte inferior del header */
+  padding: 8px 16px; /* Padding discreto para el header */
+}
+
+.custom-expansion-panel .mat-expansion-panel-content {
+  padding: 0; /* Quita el padding adicional */
+}
+

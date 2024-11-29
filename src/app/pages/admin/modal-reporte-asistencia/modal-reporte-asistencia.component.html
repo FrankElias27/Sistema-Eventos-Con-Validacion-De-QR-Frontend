@@ -1,0 +1,64 @@
+<mat-card>
+  <div class="container text-center flex justify-center items-center">
+    <img src="../../../../assets/amigos.png" width="120" height="120">
+  </div>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <mat-card-subtitle style="text-align: center;">Seleccione el Evento</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form>
+        <!-- Slide Toggle para Activar/Desactivar el Evento -->
+        <div class="container mx-auto text-center p-4">
+        <div class="flex items-center justify-center ">
+          <input
+          type="text"
+          class="search-input w100"
+          placeholder="Buscar Evento"
+          matInput
+          [formControl]="eventosControl"
+          [matAutocomplete]="auto"
+        >
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onEventSelected($event)">
+          <mat-option *ngFor="let evento of filteredEventos | async" [value]="evento">
+            {{ evento.nombre }}
+          </mat-option>
+        </mat-autocomplete>
+        </div>
+      </div>
+        <br>
+        <mat-divider></mat-divider>
+
+        <div class="flex justify-center space-x-4 mt-4">
+
+          <button
+          class="bg-red-500 text-white font-medium py-2 px-4 rounded hover:bg-red-600 transition duration-200"
+
+          color="primary"
+          type="button"
+          (click)="descargarReporteAsistenciaPDF()"
+          [disabled]="!EventoID"
+        >
+          PDF
+        </button>
+        <button
+        class="bg-green-500 text-white font-medium py-2 px-4 rounded hover:bg-green-600 transition duration-200"
+
+          color="primary"
+          type="button"
+          (click)="descargarReporteAsistenciaEXCEL()"
+          [disabled]="!EventoID"
+        >
+          EXCEL
+        </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-card>

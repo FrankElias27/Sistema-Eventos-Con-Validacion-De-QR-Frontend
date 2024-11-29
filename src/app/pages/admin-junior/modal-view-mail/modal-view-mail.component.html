@@ -1,0 +1,53 @@
+<mat-card>
+  <div class="container text-center flex justify-center items-center ">
+    <img src="../../../../assets/correo.png" width = "120" height = "120">
+  </div>
+
+  <button mat-icon-button color="warn" aria-label="Cerrar" class="close-button" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <br>
+  <mat-card-subtitle style="text-align: center;">Configuración del Usuario</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form (ngSubmit)="actualizarDatos()">
+
+        <div class="flex justify-center space-x-2 text-center mb-8">
+
+          <button
+          mat-raised-button
+          class="button-label verde button-separation"
+          (click)="deleteLogsHoy($event)">
+          <mat-icon aria-hidden="false" aria-label="Ver detalle" style="color: white;">unsubscribe</mat-icon>
+        </button>
+
+
+      </div>
+
+        <!-- Slide Toggle para Activar/Desactivar el Evento -->
+        <div class="container text-center">
+          <mat-slide-toggle
+            color="primary"
+            [(ngModel)]="isActive"
+            name="isActive"
+            (change)="toggleEventStatus($event)">
+            {{ isActive ? 'Usuario Verificado' : 'Usuario no Verificado' }}
+          </mat-slide-toggle>
+        </div>
+
+        <br>
+        <mat-divider></mat-divider>
+
+        <div class="container text-center">
+          <br>
+          <button class="btn" mat-raised-button color="primary" type="submit">Registrar Configuración</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</mat-card>
+

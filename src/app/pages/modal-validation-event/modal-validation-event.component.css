@@ -1,0 +1,10 @@
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/* modal-qr.component.css */
+::ng-deep .mat-dialog-container {
+  background: transparent; /* Establece el fondo del modal como transparente */
+  box-shadow: none; /* Opcional: elimina la sombra del modal */
+}

@@ -1,0 +1,126 @@
+
+
+#map { height: 480px; }
+
+/* Personaliza el popup */
+.leaflet-popup {
+  background-color: white; /* Fondo del popup */
+  border: 1px solid purple; /* Borde morado */
+  border-radius: 5px; /* Esquinas redondeadas */
+}
+
+/* Estilo del texto dentro del popup */
+.leaflet-popup span {
+  color: purple; /* Color del texto */
+}
+
+/* Asegúrate de que el ícono del marcador se vea bien */
+.leaflet-div-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Si deseas personalizar aún más el marcador */
+.custom-marker {
+  position: relative;
+}
+
+
+.background-container {
+  position: relative;
+  background-image: url(../../../assets/fondoInicio.webp);
+  background-size: cover;
+  background-position: center 0px;
+  background-repeat: no-repeat;
+}
+
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(13, 0, 19, 0.5); /* Capa oscura con opacidad 50% */
+  z-index: 1; /* Coloca la capa oscura detrás del contenido */
+  pointer-events: none; /* Permite la interacción con el contenido debajo del overlay */
+}
+
+/* Si tienes contenido dentro, asegúrate de que esté por encima del overlay */
+.background-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+.background-container2 {
+  position: relative;
+  background-image: url(../../../assets/FondoInicio2.webp);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.background-container2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Coloca la capa oscura detrás del contenido */
+  pointer-events: none; /* Permite la interacción con el contenido debajo del overlay */
+}
+
+/* Si tienes contenido dentro, asegúrate de que esté por encima del overlay */
+.background-container2 > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.background-section{
+  background-color: #120b28;
+}
+
+.background-section-2{
+  background-color: #24164f;
+}
+
+footer{
+  background-color: #120b28;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.text-pink{
+  color: #cc2d78;
+}
+
+.font-title{
+  font-size: 38px;  /* Cambia el tamaño del texto */
+    font-weight: bold; /* Aplica negrita */
+  background: #7145F9;
+background: linear-gradient(to right, #7145F9 0%, #CC2D78 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 1;
+}
+
+
+.margin{
+ padding: 20px 0px;
+}
+
+.navbar-logged-out {
+  background: linear-gradient(135deg, rgba(14, 0, 56, 0.8), rgba(14, 0, 56, 0.8));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+}
+
+.p-title {
+  font-family: 'Montserrat', sans-serif;
+}
+
+

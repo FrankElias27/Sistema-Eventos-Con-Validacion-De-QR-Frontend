@@ -1,0 +1,37 @@
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.verde {
+  background-color: #4CAF50; /* Verde */
+  color: white; /* Color de texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 1px 1px; /* Padding para el contenido dentro del botón */
+  display: inline-flex; /* Permite que los elementos dentro del botón se alineen horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  justify-content: center;
+}
+
+.verde mat-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono si es necesario */
+  margin-right: 0; /* Elimina el margen derecho para evitar espacio extra */
+}
+
+.rojo {
+  background-color: red; /* Verde */
+  color: white; /* Color de texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 1px 1px; /* Padding para el contenido dentro del botón */
+  display: inline-flex; /* Permite que los elementos dentro del botón se alineen horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  justify-content: center;
+}
+
+.rojo mat-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono si es necesario */
+  margin-right: 0; /* Elimina el margen derecho para evitar espacio extra */
+}
+

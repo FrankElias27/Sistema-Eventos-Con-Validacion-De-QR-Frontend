@@ -1,0 +1,16 @@
+
+
+.margin{
+  margin: 1px 0px;
+}
+
+
+.navbar-logged {
+  background: linear-gradient(135deg, rgba(14, 0, 56, 0.8), rgba(14, 0, 56, 0.8));
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+

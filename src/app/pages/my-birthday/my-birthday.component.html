@@ -1,0 +1,68 @@
+<section class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+  <div class=" padding flex flex-col items-center justify-center px-6 py-8 mx-auto w-full min-h-screen md:h-screen lg:py-0 background-container">
+
+
+      <div class="w-full bg-white rounded-[20px] shadow dark:border md:mt-0 sm:max-w-xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 ">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8 ">
+
+            <h2 *ngIf="!isLoggedIn"  class="mb-4 text-4xl tracking-tight font-extrabold font-title text-center text-gray-900 dark:text-white">Mi Cumpleaños en EvaClub</h2>
+          <h2 *ngIf="isLoggedIn" class="mb-4 text-4xl tracking-tight font-extrabold font-title text-center text-gray-900 dark:text-white">Bienvenido {{ user?.nombre | capitalize }} {{ user?.apellidoPaterno | capitalize }} {{user?.apellidoMaterno | capitalize }}</h2>
+          <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-300 sm:text-xl hidden sm:block font-p">¡Crea y gestiona tu lista de invitados para la celebración! Recuerda que solo tienes un intento para enviarla correctamente, así que ¡asegúrate de revisarla bien!</p>
+          <form action="#" class="space-y-4" >
+            <div class="grid gap-4 mb-4 md:grid-cols-2">
+              <div>
+                  <label for="subject" class="block mb-2 text-sm font-medium text-gray-400 dark:text-gray-300">Nombre y Apellidos:</label>
+                  <input type="text" id="subject" [(ngModel)]="name" name="name" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#0c0033] focus:border-[#0c0033] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Tyrion Lannister" required>
+              </div>
+
+              <div class="flex items-end gap-2 mb-4">
+                <div class="flex-1">
+                  <label for="dni" class="block mb-2 text-sm font-medium text-gray-400 dark:text-gray-300">DNI:</label>
+                  <input type="text" id="dni" [(ngModel)]="dni" name="dni" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#0c0033] focus:border-[#0c0033] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="73268168" required>
+                </div>
+                <div class="flex items-center">
+                  <button *ngIf="!isLoggedIn" id="add-button"  type="button" (click)="abrirModalInitSesion()" class="py-2 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#0c0033] hover:bg-[#080022] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><mat-icon>add</mat-icon> </button>
+                <button *ngIf="isLoggedIn" id="add-button"  type="button" (click)="addInvite()" class="py-2 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#0c0033] hover:bg-[#080022] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><mat-icon>add</mat-icon> </button>
+              </div>
+              </div>
+
+
+            </div>
+
+            <div class="overflow-x-auto h-[248px]">
+              <table class="min-w-full text-left text-sm font-light" style="height: 100%;">
+                <thead class="border-b font-medium dark:border-neutral-500">
+                  <tr>
+                    <th class="px-6 py-4">#</th> <!-- Nueva columna para el conteo -->
+                    <th class="px-6 py-4">Nombre</th>
+                    <th class="px-6 py-4">DNI</th>
+                    <th class="px-6 py-4">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="invites.length === 0 && isLoggedIn">
+                    <td colspan="4" class="text-center text-gray-500">No hay invitados añadidos</td>
+                  </tr>
+                  <tr *ngIf="invites.length === 0 && !isLoggedIn">
+                    <td colspan="4" class="text-center text-gray-500">Por favor, inicia sesión para crear tu lista de invitados.</td>
+                  </tr>
+                  <tr *ngFor="let invite of invites; let i = index" class="border-b dark:border-neutral-500">
+                    <td class="whitespace-nowrap px-6 py-4">{{ i + 1 }}</td> <!-- Conteo -->
+                    <td class="whitespace-nowrap px-6 py-4 font-medium dark:text-white">{{ invite.name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ invite.dni }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">
+                      <button (click)="removeInvite(i)" class="text-red-500 hover:text-red-700"><mat-icon>delete</mat-icon></button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <button *ngIf="!isLoggedIn" type="submit" (click)="abrirModalInitSesion()" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#0c0033]  sm:w-fit hover:bg-[#080022] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar lista de Invitados</button>
+              <button *ngIf="isLoggedIn" type="submit" (click)="enviarLista()" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#0c0033]  sm:w-fit hover:bg-[#080022] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar lista de Invitados</button>
+          </form>
+      </div>
+
+    </div>
+  </div>
+</section>
